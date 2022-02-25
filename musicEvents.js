@@ -1,6 +1,6 @@
 const { MessageEmbed} = require('discord.js');
 
-module.exports = async (message, args, cmd, client, Discord) => {
+module.exports = async (message, cmd, client) => {
 
     //Distube events
 
