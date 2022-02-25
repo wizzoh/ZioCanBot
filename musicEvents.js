@@ -8,8 +8,11 @@ module.exports = async (message, client, Discord) => {
     client.distube.on("playSong", (queue, song) => {
         var playEmbed = new MessageEmbed()
         .setColor('GREEN')
-        .setDescription(`Stai ascoltando **${song.name}**`)
-        .setDescription(`Richiesta da: ${message.author}`)
+        .setTitle("**IN RIPRODUZIONE")
+        .addFields(
+            { name: 'Titolo: ', value: song.name },
+            {name: 'Richiesta da: ', value: message.author }
+        )
 
         queue.textChannel.send(playEmbed);
     });
@@ -19,8 +22,10 @@ module.exports = async (message, client, Discord) => {
         var addEmbed = new MessageEmbed()
         .setColor('PURPLE')
         .setTitle("**Canzone Aggiunta!**")
-        .setDescription(`Titolo: **${song.name}**`)
-        .setDescription(`Richiesta da: ${message.author}`)
+        .addFields(
+            { name: 'Titolo: ', value: song.name },
+            {name: 'Richiesta da: ', value: message.author }
+        )
 
         queue.textChannel.send(addEmbed);
     });
@@ -30,8 +35,10 @@ module.exports = async (message, client, Discord) => {
         var ListEmbed = new MessageEmbed()
         .setColor('PURPLE')
         .setTitle("**PlayList Aggiunta!**")
-        .setDescription(`Nome: **${song.name}**`)
-        .setDescription(`Richiesta da: ${message.author}`)
+        .addFields(
+            { name: 'Titolo: ', value: song.name },
+            {name: 'Richiesta da: ', value: message.author }
+        )
 
         queue.textChannel.send(ListEmbed);
     });
