@@ -15,6 +15,6 @@ module.exports = {
 
         var random = Math.floor(Math.random() * mess.length);
         const canale = client.channels.cache.get("946075082994888704");
-        await canale.send(`Perfetto! Sono qui solo per rompere il cazzo a ${mess[random]}`);
+        //await canale.send(`Perfetto! Sono qui solo per rompere il cazzo a ${mess[random]}`);
     }
 }

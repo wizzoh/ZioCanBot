@@ -11,7 +11,8 @@ module.exports = async (message, client) => {
             .setTitle("**In Riproduzione**")
             .addFields(
                 { name: 'Titolo: ', value: song.name },
-                { name: 'Richiesta da: ', value: 'lo vorrei sapere pure io' }
+                { name: 'Durata: ', value: song.formattedDuration},
+                { name: 'Richiesta da: ', value: song.user }
             )
 
         queue.textChannel.send(playEmbed);
@@ -24,6 +25,7 @@ module.exports = async (message, client) => {
             .setTitle("**Canzone Aggiunta!**")
             .addFields(
                 { name: 'Titolo: ', value: song.name },
+                { name: 'Durata: ', value: song.formattedDuration},
                 { name: 'Richiesta da: ', value: 'lo vorrei sapere pure io' }
             )
 
@@ -36,9 +38,10 @@ module.exports = async (message, client) => {
             .setColor('PURPLE')
             .setTitle("**PlayList Aggiunta!**")
             .addFields(
-                { name: 'Titolo: ', value: song.name },
+                { name: 'Titolo: ', value: playlist.name },
                 { name: 'Richiesta da: ', value: 'lo vorrei sapere pure io' }
             )
+            .setImage(playlist.thumbnail)
 
         queue.textChannel.send(ListEmbed);
     });
@@ -48,23 +51,18 @@ module.exports = async (message, client) => {
         queue.textChannel.send("Vocale vuota? Allora sparisco uwu");
     });
 
-    /*
-    client.distube.on("deleteQueue", (queue) => {
-        queue.textChannel.send("Queue cancellata!");
-    })
-    */
-
-    //disconnect event
-    client.distube.on("disconnect", (queue) => {
-        queue.textChannel.send("La ringrazio infinitamente di questo suo nobile gesto🛐");
-    });
 
     //NoResult event
     client.distube.on("searchNoResult", (message, query) => {
         message.channel.send(`Nessun risultato trovato per ${query}`)
     });
 
-    /*error event
+    /*disconnect event
+    client.distube.on("disconnect", (queue) => {
+        queue.textChannel.send("La ringrazio infinitamente di questo suo nobile gesto🛐");
+    });
+
+    //error event
     client.distube.on("error", (channel, error) => {
         var errEmbed = new MessageEmbed()
         .setColor("RED")
@@ -73,5 +71,10 @@ module.exports = async (message, client) => {
 
         message.channel.send(errEmbed);
     });
+
+    //delqueue event
+    client.distube.on("deleteQueue", (queue) => {
+        queue.textChannel.send("Queue cancellata!");
+    })
     */
 }

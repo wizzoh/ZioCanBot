@@ -21,7 +21,7 @@ client.distube = new DisTube(client, {
     leaveOnStop: false,
     savePreviousSongs: true,
     emitAddSongWhenCreatingQueue: false,
-    emitAddListWhenCreatingQueue: false,
+    emitAddListWhenCreatingQueue: true,
     searchSongs: 0,
     youtubeDL: false,
     plugins: [new SpotifyPlugin()],
@@ -29,11 +29,5 @@ client.distube = new DisTube(client, {
 });
 
 require("./musicEvents")(message, client);
-
-/*
-client.distube.on("playSong", (queue, song) => {
-    queue.textChannel.send(`Stai ascoltando **${song.name}**`);
-});
-*/
 
 client.login(process.env.token);
