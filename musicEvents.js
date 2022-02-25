@@ -1,4 +1,4 @@
-const { MessageEmbed} = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 
 module.exports = async (message, client) => {
 
@@ -7,12 +7,12 @@ module.exports = async (message, client) => {
     //playSong Event
     client.distube.on("playSong", (queue, song) => {
         var playEmbed = new MessageEmbed()
-        .setColor('GREEN')
-        .setTitle("**IN RIPRODUZIONE")
-        .addFields(
-            { name: 'Titolo: ', value: song.name },
-            {name: 'Richiesta da: ', value: 'lo vorrei sapere pure io' }
-        )
+            .setColor('GREEN')
+            .setTitle("**In Riproduzione**")
+            .addFields(
+                { name: 'Titolo: ', value: song.name },
+                { name: 'Richiesta da: ', value: 'lo vorrei sapere pure io' }
+            )
 
         queue.textChannel.send(playEmbed);
     });
@@ -20,12 +20,12 @@ module.exports = async (message, client) => {
     //addSong event
     client.distube.on("addSong", (queue, song) => {
         var addEmbed = new MessageEmbed()
-        .setColor('PURPLE')
-        .setTitle("**Canzone Aggiunta!**")
-        .addFields(
-            { name: 'Titolo: ', value: song.name },
-            {name: 'Richiesta da: ', value: 'lo vorrei sapere pure io' }
-        )
+            .setColor('PURPLE')
+            .setTitle("**Canzone Aggiunta!**")
+            .addFields(
+                { name: 'Titolo: ', value: song.name },
+                { name: 'Richiesta da: ', value: 'lo vorrei sapere pure io' }
+            )
 
         queue.textChannel.send(addEmbed);
     });
@@ -33,12 +33,12 @@ module.exports = async (message, client) => {
     //addList event
     client.distube.on("addList", (queue, playlist) => {
         var ListEmbed = new MessageEmbed()
-        .setColor('PURPLE')
-        .setTitle("**PlayList Aggiunta!**")
-        .addFields(
-            { name: 'Titolo: ', value: song.name },
-            {name: 'Richiesta da: ', value: 'lo vorrei sapere pure io' }
-        )
+            .setColor('PURPLE')
+            .setTitle("**PlayList Aggiunta!**")
+            .addFields(
+                { name: 'Titolo: ', value: song.name },
+                { name: 'Richiesta da: ', value: 'lo vorrei sapere pure io' }
+            )
 
         queue.textChannel.send(ListEmbed);
     });
@@ -47,7 +47,7 @@ module.exports = async (message, client) => {
     client.distube.on("empty", (queue) => {
         queue.textChannel.send("Vocale vuota? Allora sparisco uwu");
     });
-    
+
     /*
     client.distube.on("deleteQueue", (queue) => {
         queue.textChannel.send("Queue cancellata!");
