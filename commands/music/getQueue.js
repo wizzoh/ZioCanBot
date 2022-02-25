@@ -9,7 +9,7 @@ module.exports = {
 
         const queue = client.distube.getQueue(message);
         if (!queue) return message.reply("Nessuna queue trovata in questo server!");
-        var queueEmbed = MessageEmbed()
+        var queueEmbed = new MessageEmbed()
             .setColor("PINK")
             .setTitle("**Lista delle canzoni**")
             .setDescription(queue.songs.map((song, id) =>

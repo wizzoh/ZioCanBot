@@ -1,6 +1,6 @@
 const { MessageEmbed} = require('discord.js');
 
-module.exports = async (message, client, Discord) => {
+module.exports = async (message, args, cmd, client, Discord) => {
 
     //Distube events
 
@@ -11,7 +11,7 @@ module.exports = async (message, client, Discord) => {
         .setTitle("**IN RIPRODUZIONE")
         .addFields(
             { name: 'Titolo: ', value: song.name },
-            {name: 'Richiesta da: ', value: message.author }
+            {name: 'Richiesta da: ', value: cmd.author }
         )
 
         queue.textChannel.send(playEmbed);
