@@ -1,11 +1,9 @@
-const config = require('../../config.json');
-
 module.exports = {
     name: "message",
     async execute(message, client, Discord) {
 
         if (message.channel.type === "dm") return;
-        const prefix = config.prefix;
+        const prefix = process.env.prefix;
 
         if (message.author.bot) return;
 

@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const { Intents, MessageAttachment, MessageEmbed } = Discord;
-const config = require('./config.json');
 const client = new Discord.Client({ ws: { intents: new Discord.Intents(Discord.Intents.ALL) } });
 const message = require ('./events/Message/message');
 const { default: DisTube } = require('distube');
@@ -37,4 +36,4 @@ client.distube.on("playSong", (queue, song) => {
 });
 */
 
-client.login(config.token);
+client.login(process.env.token);
