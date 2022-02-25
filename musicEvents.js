@@ -74,6 +74,7 @@ module.exports = async (message, client) => {
 
     //delqueue event
     client.distube.on("deleteQueue", (queue) => {
+        
         queue.textChannel.send("Queue cancellata!");
     })
     */
