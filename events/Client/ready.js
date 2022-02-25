@@ -8,11 +8,11 @@ var mess = [`${luzzy}`, `${diego}`, `${sun}`, `${wizz}`, `${giansa}`];
 
 module.exports = {
     name: "ready",
-    async execute(message, client) {
+    async execute(client, message) {
 
         console.log('Bot online');
         client.user.setActivity('video porno di sacco', { type: 'WATCHING', status: 'idle' });
-        
+
         var random = Math.floor(Math.random() * mess.length);
         const canale = client.channels.cache.get("946075082994888704");
         await canale.send(`Perfetto! Sono qui solo per rompere il cazzo a ${mess[random]}`);
