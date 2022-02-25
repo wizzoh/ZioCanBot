@@ -7,7 +7,9 @@ module.exports = {
 
         const voiceChannel = message.member?.voice?.channel;
         let search = args.join(" ");
+
         if (!search) return message.channel.send("Devi inserire il titolo o il link della canzone!");
+        
         if(voiceChannel) {
             client.distube.play(voiceChannel, search, {
                 message,
