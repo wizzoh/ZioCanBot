@@ -4,6 +4,7 @@ const client = new Discord.Client({ ws: { intents: new Discord.Intents(Discord.I
 const message = require ('./events/Message/message');
 const { default: DisTube } = require('distube');
 const { SpotifyPlugin } = require('@distube/spotify');
+//require('dotenv').config();
 
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();

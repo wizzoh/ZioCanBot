@@ -7,12 +7,12 @@ module.exports = {
         const mode = client.distube.setRepeatMode(message);
 
         message.channel.send(
-            `Repeat mode settato in \`${
+            `Loop settato in \`${
                 mode
                     ? mode === 2
-                        ? 'All Queue'
+                        ? 'Queue'
                         : 'Questa Canzone'
-                    : 'Spento'
+                    : 'Off'
             }\``,
         )
     }

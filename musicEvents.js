@@ -21,12 +21,12 @@ module.exports = async (message, client) => {
     //addSong event
     client.distube.on("addSong", (queue, song) => {
         var addEmbed = new MessageEmbed()
-            .setColor('PURPLE')
+            .setColor('LUMINOUS_VIVID_PINK')
             .setTitle("**Canzone Aggiunta!**")
             .addFields(
                 { name: 'Titolo: ', value: song.name },
                 { name: 'Durata: ', value: song.formattedDuration},
-                { name: 'Richiesta da: ', value: 'lo vorrei sapere pure io' }
+                { name: 'Richiesta da: ', value: song.user }
             )
 
         queue.textChannel.send(addEmbed);
@@ -35,11 +35,11 @@ module.exports = async (message, client) => {
     //addList event
     client.distube.on("addList", (queue, playlist) => {
         var ListEmbed = new MessageEmbed()
-            .setColor('PURPLE')
+            .setColor('FUCHSIA')
             .setTitle("**PlayList Aggiunta!**")
             .addFields(
                 { name: 'Titolo: ', value: playlist.name },
-                { name: 'Richiesta da: ', value: 'lo vorrei sapere pure io' }
+                { name: 'Richiesta da: ', value: playlist.user }
             )
             .setImage(playlist.thumbnail)
 

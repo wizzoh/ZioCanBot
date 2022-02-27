@@ -13,6 +13,7 @@ module.exports = {
         } else {
             queue.delete();
             channel.disconnect();
+            message.channel.send("Va bene capo, me ne vado!");
         }
 
     }
