@@ -1,6 +1,6 @@
 module.exports = {
     name: 'lyrics',
-    aliases: ['testo],
+    aliases: ['testo'],
     description: 'music Command',
 
     async execute(message, args, cmd, client, Discord) {
