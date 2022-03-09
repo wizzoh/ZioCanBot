@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['testo'],
     description: 'music Command',
 
-    async execute(message, args, cmd, client, Discord, artist, title) {
+    async execute(message, args, cmd, client, Discord) {
 /*
         let queue = client.distube.getQueue(message.guild.id);
         let firstSong = queue.songs[0].name;
@@ -19,6 +19,6 @@ module.exports = {
         
         let lyrics = await lyricsFinder(artist, title) || "Not Found!";
         console.log(lyrics);
-        }("poets of fall", "carnival of rust");
+        }
     }
 }
