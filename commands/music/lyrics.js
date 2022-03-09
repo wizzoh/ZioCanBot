@@ -6,7 +6,7 @@ module.exports = {
     async execute(message, args, cmd, client, Discord) {
 
         let queue = client.distube.getQueue(message.guild.id);
-        let firstSong = queue.songs[0];
+        let firstSong = queue.songs[0].name;
         if (!firstSong) {
             return message.reply("Non sto riproducendo nessuna canzone!");
         } else {
