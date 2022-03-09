@@ -11,5 +11,6 @@ module.exports = {
             return message.reply("Non sto riproducendo nessuna canzone!");
         } else {
           message.channel.send(`${firstSong}`);
+        }
     }
 }
