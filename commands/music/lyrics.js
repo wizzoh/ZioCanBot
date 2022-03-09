@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['testo'],
     description: 'music Command',
 
-    async execute(message, args, cmd, client, Discord) {
+    async execute(message, args, cmd, client, Discord, artist, title) {
 /*
         let queue = client.distube.getQueue(message.guild.id);
         let firstSong = queue.songs[0].name;
