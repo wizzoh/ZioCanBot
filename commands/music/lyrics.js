@@ -19,6 +19,6 @@ module.exports = {
         
         let lyrics = await lyricsFinder(artist, title) || "Not Found!";
         console.log(lyrics);
-        })("poets of fall", "carnival of rust");
+        }("poets of fall", "carnival of rust");
     }
 }
